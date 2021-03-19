@@ -5,6 +5,9 @@
  * There is no delition logic handled assuming there will not be any delition
  */
 
+ /**
+ * @param {number} capacity
+ */
 class SortingHat {
     constructor({ capacity }) {
         this.houseCapacity = capacity;
@@ -13,6 +16,12 @@ class SortingHat {
         };
         this.rollMap = {}
     }
+    /** 
+     * @param {number} roll 
+     * @param {string} schoolClass 
+     * @param {string} foodPreferece
+     * @return {Error:String/Success:Object}
+     */
     register(roll, schoolClass, foodPreferece) {
         schoolClass = String(schoolClass).toUpperCase();
         foodPreferece = String(foodPreferece).toUpperCase();
@@ -43,7 +52,12 @@ class SortingHat {
     }
 
 }
-
+/** 
+ * Your SortingHat object will be instantiated and called as such:
+ * var School = new SortingHat(capacity)
+ * var param_1 = School.register(roll, schoolClass, foodPreferece)
+ * School.getBoardingHouses()
+ */
 module.exports = SortingHat;
 
 
