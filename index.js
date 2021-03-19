@@ -1,7 +1,8 @@
 /***
  * Assumptions
- * ScoolClass input is string [A,B]
- * foodPrefererence input string [V,NV]
+ * ScoolClass input is string [A,B], logic handles any string input
+ * foodPrefererence input string [V,NV], logic handles any string input
+ * There is no delition logic handled assuming there will not be any delition
  */
 
 class SortingHat {

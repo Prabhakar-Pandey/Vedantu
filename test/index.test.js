@@ -1,8 +1,5 @@
 var assert = require('chai').assert;
 const SortingHat = require("../index");
-beforeEach(()=> {
-    
-});
 
 describe('Class Initialized', ()=> {
     let School = new SortingHat({
@@ -23,7 +20,7 @@ describe('Class Initialized', ()=> {
     const boardingHouses = School.register("a123","B","V");
     assert.equal(boardingHouses, "Enter roll number integer value");
   });
-  it('This will add all the test cases', ()=> {
+  it('This will add 12 stundents', ()=> {
     School.register(1000,"B","V");
     School.register(1001,"a","V");
     School.register(1002,"a","V");
@@ -36,7 +33,36 @@ describe('Class Initialized', ()=> {
     School.register(1010,"b","V");
     School.register(1011,"a","nV");
     School.register(1012,"B","nV");
-    const boardingHouses = School.getBoardingHouses()
-    assert.hasAllKeys(boardingHouses, ['BV', 'AV', 'BNV','ANV','NA']);
+    const boardingHouses = School.getBoardingHouses();
+    assert.deepEqual(boardingHouses, {
+        NA: [],
+        BV: [ 1000, 1004, 1010 ],
+        AV: [ 1001, 1002, 1007 ],
+        BNV: [ 1003, 1009, 1012 ],
+        ANV: [ 1005, 1008, 1011 ]
+      });
+  });
+  it('This will add 13 students', ()=> {
+    School.register(1000,"B","V");
+    School.register(1001,"a","V");
+    School.register(1002,"a","V");
+    School.register(1003,"b","nV");
+    School.register(1004,"b","V");
+    School.register(1005,"a","nV");
+    School.register(1007,"a","V");
+    School.register(1008,"a","nV");
+    School.register(1009,"b","nV");
+    School.register(1010,"b","V");
+    School.register(1011,"a","nV");
+    School.register(1012,"B","nV");
+    School.register(1013,"B","nV");
+    const boardingHouses = School.getBoardingHouses();
+    assert.deepEqual(boardingHouses, {
+        NA: [ 1013 ],
+        BV: [ 1000, 1004, 1010 ],
+        AV: [ 1001, 1002, 1007 ],
+        BNV: [ 1003, 1009, 1012 ],
+        ANV: [ 1005, 1008, 1011 ]
+      });
   });
 });
