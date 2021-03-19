@@ -1,4 +1,4 @@
-class Registration{
+class SortingHat{
     constructor({capacity}) {
         this.houseCapacity = capacity;
     }
@@ -6,4 +6,4 @@ class Registration{
       
 }
 
-module.exports = Registration
+module.exports = SortingHat;

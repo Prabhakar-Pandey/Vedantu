@@ -1,14 +1,14 @@
 var assert = require('assert');
-const Registration = require("../index");
+const SortingHat = require("../index");
 beforeEach(()=> {
     
 });
 
 describe('Class Initialized', ()=> {
-    let School = new Registration({
+    let School = new SortingHat({
         capacity:12
     })
-  it('this will initialize my Registration class with Hat capacity 12 ', ()=> {
+  it('This will initialize my SortingHat class with Hat capacity 12 ', ()=> {
     assert.equal(School.houseCapacity, 12);
   });
 });
