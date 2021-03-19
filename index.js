@@ -43,9 +43,6 @@ class SortingHat {
     }
 
 }
-const School = new SortingHat({
-    capacity: 10
-})
 
 module.exports = SortingHat;
 
